@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .base-container {
+    @apply mx-5 dt:mx-40;
+  }
+
+  .play-button-icon {
+    @apply w-0 h-0 border-[10px] border-transparent border-t-0 border-b-[15px] border-b-white rotate-90 relative left-0.5;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .activeClass {
+    @apply border-2 p-2 h-20 w-20 flex justify-center items-center border-blue-700 rounded-sm;
+  }
+
+  .activePaginationClass {
+    @apply bg-coral border border-coral;
+  }
+
+  .activeVideoPaginationClass {
+    @apply text-coral;
+  }
+
+  .activeTabClass {
+    @apply bg-grey text-blue-600 rounded-full;
+  }
+
+  .zoomInCursor {
+    @apply cursor-zoom-in;
+  }
+
+  .zoomOutCursor {
+    @apply cursor-zoom-out;
+  }
+}
