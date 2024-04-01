@@ -1,20 +1,14 @@
 <template>
-  <div
-    class="overflow-hidden flex justify-center items-center w-full"
-    @touchstart="onTouchStart"
-    @touchmove="onTouchMove"
-    @touchend="onTouchEnd"
-  >
+  <div class="overflow-hidden flex justify-center items-center w-full">
     <img
       :src="imgPath"
       class="transition-transform duration-500 ease-in-out"
       :class="imgClasses"
-      alt="Back View"
+      alt="View"
       :style="{
         transform: dblZoomState
           ? `scale(1.5) translate(${translateX}px, ${translateY}px)`
           : 'scale(1) translate(0px, 0px)',
-        dragStyleClasses,
       }"
       @dblclick="zoomOnRegion"
       ref="image"
@@ -24,7 +18,7 @@
 
 <script>
 export default {
-  props: ["imgPath", "prev", "next", "thumbnail", "mobileModal"],
+  props: ["imgPath"],
   inject: ["product"],
   data() {
     return {
@@ -41,35 +35,8 @@ export default {
         return "w-40";
       }
     },
-
-    dragStyleClasses() {
-      if (this.imgPath === this.product.assets.regular.frontBack) {
-        return `transform: translateX(${-(this.thumbnail - 1) * 100}%)`;
-      } else if (this.imgPath === this.product.assets.regular.front) {
-        return `transform: translateX(${-(this.thumbnail - 2) * 100}%)`;
-      } else if (this.imgPath === this.product.assets.regular.back) {
-        return `transform: translateX(${-(this.thumbnail - 3) * 100}%)`;
-      }
-    },
   },
   methods: {
-    onTouchStart(event) {
-      this.touchStartX = event.touches[0].clientX;
-    },
-
-    onTouchMove(event) {
-      this.touchEndX = event.touches[0].clientX;
-    },
-
-    onTouchEnd() {
-      const deltaX = this.touchEndX - this.touchStartX;
-      if (deltaX > 50) {
-        this.prev();
-      } else if (deltaX < -50) {
-        this.next();
-      }
-    },
-
     zoomOnRegion(event) {
       this.dblZoomState = !this.dblZoomState;
 

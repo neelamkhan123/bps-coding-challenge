@@ -1,7 +1,9 @@
 <template>
   <ul
     class="flex justify-center items-center space-x-1"
-    :class="{ hidden: mobileDragCarousel && !showThumbnails }"
+    :class="{
+      hidden: mobileDragCarousel && !showThumbnails,
+    }"
   >
     <li
       @click="setActiveThumbnail(1)"

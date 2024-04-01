@@ -1,6 +1,6 @@
 <template>
   <div class="w-full relative">
-    <div class="bg-white w-full h-full shadow-md rounded-md mb-4 dt:py-5">
+    <div class="bg-white w-full h-full shadow-md rounded-md mb-4 smdt:py-5">
       <!-- Image Carousel -->
       <ImageCarousel
         :setThumbnail="thumbnail"

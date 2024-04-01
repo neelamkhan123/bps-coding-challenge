@@ -7,11 +7,11 @@
 
   <!-- Pop Up Modal -->
   <div
-    class="fixed top-1 right-1 left-1 bottom-1 dt:top-10 dt:left-10 dt:right-10 dt:bottom-10 bg-white rounded-md shadow-md flex flex-col justify-between z-30"
+    class="fixed top-1 right-1 left-1 bottom-1 smdt:top-10 smdt:left-10 smdt:right-10 smdt:bottom-10 bg-white rounded-md shadow-md flex flex-col justify-between z-30"
   >
     <!-- Modal Navigation -->
     <div>
-      <div class="hidden dt:block">
+      <div class="hidden smdt:block">
         <nav class="px-6 py-4 flex justify-between items-center">
           <!-- Modal Tabs -->
           <ul class="flex justify-center items-center space-x-5">
@@ -35,7 +35,7 @@
           <button
             @click="closeModal"
             type="button"
-            class="text-gray-500 hidden dt:block"
+            class="text-gray-500 hidden smdt:block"
           >
             <i class="fa-solid fa-xmark"></i>
           </button>
@@ -46,7 +46,7 @@
         <button
           @click="closeModal"
           type="button"
-          class="text-gray-500 m-5 px-4 py-2 font-semibold rounded-lg shadow-lg hover:shadow-md transition duration-500 dt:hidden"
+          class="text-gray-500 m-5 px-4 py-2 font-semibold rounded-lg shadow-lg hover:shadow-md transition duration-500 smdt:hidden"
         >
           Back
         </button>
@@ -55,7 +55,7 @@
 
     <!-- Main Content Container -->
     <div
-      class="flex flex-col dt:flex-row items-center dt:items-start justify-between h-full dt:pt-10 dt:px-16"
+      class="flex flex-col smdt:flex-row items-center smdt:items-start justify-between h-full smdt:pt-10 smdt:px-16"
     >
       <ImageCarousel
         :setThumbnail="activeThumbnail"
@@ -69,14 +69,14 @@
       <!-- Photos Tab -->
       <section
         v-if="photosTabClass"
-        class="flex flex-col dt:flex-row justify-center items-center w-96"
+        class="flex flex-col smdt:flex-row justify-center items-center w-96"
       >
         <div
-          class="flex justify-center dt:flex-col items-center dt:items-start w-full ml-5"
+          class="flex justify-center smdt:flex-col items-center smdt:items-start w-full ml-5"
         >
           <!-- The Description -->
-          <div class="block dt:hidden smdt:block">
-            <div class="w-60 hidden smdt:block">
+          <div class="block smdt:hidden dt:block">
+            <div class="w-60 hidden dt:block">
               <h1 class="mb-5 text-xl font-semibold">
                 {{ product.fullDescription }}
               </h1>
@@ -94,7 +94,7 @@
 
       <!-- Videos Tab -->
       <section v-if="videosTabClass">
-        <div class="hidden dt:block ml-5">
+        <div class="hidden smdt:block ml-5">
           <div class="w-60">
             <h1 class="mb-5 text-xl font-semibold">
               {{ product.fullDescription }}

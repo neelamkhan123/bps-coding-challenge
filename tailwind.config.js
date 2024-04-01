@@ -6,10 +6,10 @@ export default {
       screens: {
         // Mobile
         mb: "500px",
-        // Desktop
-        dt: "700px",
         // Smaller Desktops
-        smdt: "1230px",
+        smdt: "700px",
+        // Desktop
+        dt: "1230px",
       },
       colors: {
         grey: "#f3f4f6",

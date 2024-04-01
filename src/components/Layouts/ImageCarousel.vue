@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-center dt:px-20 py-10"
+    class="flex justify-center smdt:px-20 py-10"
     :class="{
       'mt-20': mobileModal && mobileDragCarousel,
       'w-full h-full': desktopModal && desktopThumbnailCarousel,
@@ -28,14 +28,7 @@
         </div>
 
         <!-- Mobile Carousel -->
-        <RegionZoom
-          v-else
-          :prev="prev"
-          :next="next"
-          :thumbnail="thumbnail"
-          :mobileModal="mobileModal"
-          :imgPath="product.assets.regular.frontBack"
-        />
+        <RegionZoom v-else :imgPath="product.assets.regular.frontBack" />
       </div>
 
       <!-- Image 2 -->
@@ -55,14 +48,7 @@
         </div>
 
         <!-- Mobile Carousel -->
-        <RegionZoom
-          v-else
-          :prev="prev"
-          :next="next"
-          :thumbnail="thumbnail"
-          :mobileModal="mobileModal"
-          :imgPath="product.assets.regular.front"
-        />
+        <RegionZoom v-else :imgPath="product.assets.regular.front" />
       </div>
 
       <!-- Image 3 -->
@@ -82,14 +68,7 @@
         </div>
 
         <!-- Mobile Carousel -->
-        <RegionZoom
-          v-else
-          :prev="prev"
-          :next="next"
-          :thumbnail="thumbnail"
-          :mobileModal="mobileModal"
-          :imgPath="product.assets.regular.back"
-        />
+        <RegionZoom v-else :imgPath="product.assets.regular.back" />
       </div>
     </div>
 
@@ -122,7 +101,7 @@
   <!-- Left Arrow -->
   <div
     v-if="showArrows"
-    class="absolute left-3 top-60 dt:top-64 text-gray-600 text-sm font-bold cursor-pointer hover:text-blue-500"
+    class="absolute left-3 top-60 smdt:top-64 text-gray-600 text-sm font-bold cursor-pointer hover:text-blue-500"
     @click="prev"
   >
     <i class="fa-solid fa-chevron-left"></i>
@@ -130,7 +109,7 @@
   <!-- Right Arrow -->
   <div
     v-if="showArrows"
-    class="absolute right-3 top-60 dt:top-64 text-gray-600 text-sm font-bold cursor-pointer hover:text-blue-500"
+    class="absolute right-3 top-60 smdt:top-64 text-gray-600 text-sm font-bold cursor-pointer hover:text-blue-500"
     @click="next"
   >
     <i class="fa-solid fa-chevron-right"></i>

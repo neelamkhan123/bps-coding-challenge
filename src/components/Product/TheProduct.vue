@@ -1,6 +1,6 @@
 <template>
   <section
-    class="flex flex-col smdt:flex-row justify-center smdt:items-start items-center space-y-3 dt:space-y-0 smdt:space-x-32 base-container relative"
+    class="flex flex-col dt:flex-row justify-center dt:items-start items-center space-y-3 dt:space-y-0 dt:space-x-32 base-container relative"
   >
     <!-- Image Container -->
     <TheImageContainer @openModal="openModal" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div v-if="limitByScreen" class="relative">
     <div
       ref="picture"
       class="relative"
@@ -31,14 +31,14 @@
       }"
     ></div>
   </div>
-  <!-- <div v-else class="relative w-80 h-96">
+  <div v-else class="relative" :class="imgClasses">
     <img
       :src="imgPath"
       alt="Front and Back"
       ref="image"
       class="w-full h-full"
     />
-  </div> -->
+  </div>
 </template>
 
 <script>
