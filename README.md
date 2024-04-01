@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+Hello, this is Neelam Khan's attempt at the BPS Coding Challenge!
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+After learning TailwindCSS, VueJS, and NuxtJS, I am happy to say I have completed my first mini project using Tailwind and Vue and hope it meets your standards for a junior developer.
 
-## Recommended IDE Setup
+Admittedly, I did struggle with some features but did my best to at least attempt them, namely the touch drag/swipe feature. I somewhat acheived this goal in a number of different ways but was failed to intergrate it correctly with the rest of my code. Overall, although my structure needs works, I am happy with the outcome of this challenge.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+######
+
+Run "npm run dev" to view in the browser.
+
+######
+
+Also available via the link: https://bps-coding-challenge-neelam-khan.netlify.app
+
+######
