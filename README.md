@@ -13,3 +13,7 @@ Run "npm run dev" to view in the browser.
 Also available via the link: https://bps-coding-challenge-neelam-khan.netlify.app
 
 ######
+
+Source code available here: https://github.com/neelamkhan123/bps-coding-challenge
+
+######
