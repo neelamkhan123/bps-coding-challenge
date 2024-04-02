@@ -2,8 +2,8 @@
   <div
     class="flex justify-center smdt:px-20 py-10"
     :class="{
-      'mt-20': mobileModal && mobileDragCarousel,
-      'w-full h-full': desktopModal && desktopThumbnailCarousel,
+      'mt-20': mobileModal && mobileWidth,
+      'w-full h-full': desktopModal && minDesktopWidth,
     }"
   >
     <!-- Image Container -->
@@ -18,7 +18,7 @@
         v-if="setThumbnail === 1 || (setThumbnail === 4 && desktopModal)"
       >
         <!-- Desktop Carousel -->
-        <div v-if="desktopThumbnailCarousel">
+        <div v-if="minDesktopWidth">
           <ClickZoom
             v-if="desktopModal"
             :imgPath="product.assets.regular.frontBack"
@@ -38,7 +38,7 @@
         v-if="setThumbnail === 2"
       >
         <!-- Desktop Carousel -->
-        <div v-if="desktopThumbnailCarousel">
+        <div v-if="minDesktopWidth">
           <ClickZoom
             v-if="desktopModal"
             :imgPath="product.assets.regular.front"
@@ -58,7 +58,7 @@
         v-if="setThumbnail === 3"
       >
         <!-- Desktop Carousel -->
-        <div v-if="desktopThumbnailCarousel">
+        <div v-if="minDesktopWidth">
           <ClickZoom
             v-if="desktopModal"
             :imgPath="product.assets.regular.back"
@@ -74,9 +74,9 @@
 
     <!-- Video Container -->
     <div
-      v-if="videoTabIsTrue && desktopThumbnailCarousel"
+      v-if="videoTabIsTrue && minDesktopWidth"
       class="w-72 h-96"
-      :class="{ 'w-full': desktopModal && desktopThumbnailCarousel }"
+      :class="{ 'w-full': desktopModal && minDesktopWidth }"
     >
       <div
         @click="openModalToMedia(4)"
@@ -90,7 +90,7 @@
         <video
           controls
           autoplay
-          :class="{ 'w-full': desktopModal && desktopThumbnailCarousel }"
+          :class="{ 'w-full': desktopModal && minDesktopWidth }"
         >
           <source :src="product.assets.regular.video" type="video/mp4" />
         </video>
@@ -144,10 +144,10 @@ export default {
     };
   },
   computed: {
-    mobileDragCarousel() {
+    mobileWidth() {
       return this.windowWidth < 700;
     },
-    desktopThumbnailCarousel() {
+    minDesktopWidth() {
       return this.windowWidth > 700;
     },
   },
@@ -155,7 +155,7 @@ export default {
     next() {
       if (this.thumbnail === 4) {
         this.thumbnail = 1;
-      } else if (this.thumbnail === 3 && this.mobileDragCarousel === true) {
+      } else if (this.thumbnail === 3 && this.mobileWidth === true) {
         this.thumbnail = 1;
       } else {
         this.thumbnail += 1;
@@ -164,7 +164,7 @@ export default {
     },
 
     prev() {
-      if (this.thumbnail === 1 && this.mobileDragCarousel === true) {
+      if (this.thumbnail === 1 && this.mobileWidth === true) {
         this.thumbnail = 3;
       } else if (this.thumbnail === 1) {
         this.thumbnail = 4;

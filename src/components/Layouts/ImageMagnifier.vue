@@ -1,5 +1,5 @@
 <template>
-  <div v-if="limitByScreen" class="relative">
+  <div v-if="smallerDesktopScreen" class="relative">
     <div
       ref="picture"
       class="relative"
@@ -62,7 +62,7 @@ export default {
       }
     },
 
-    limitByScreen() {
+    smallerDesktopScreen() {
       return this.windowWidth > 1230;
     },
   },

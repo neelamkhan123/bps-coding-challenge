@@ -2,7 +2,8 @@
   <ul
     class="flex justify-center items-center space-x-1"
     :class="{
-      hidden: mobileDragCarousel && !showThumbnails,
+      hidden: mobileWidth && !showThumbnails,
+      'flex-col': verticalIsTrue,
     }"
   >
     <li
@@ -61,6 +62,11 @@ export default {
       required: false,
       default: false,
     },
+    verticalIsTrue: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   emits: ["openOnThumbnailModal", "setThumbnail"],
   inject: ["product"],
@@ -71,7 +77,7 @@ export default {
     };
   },
   computed: {
-    mobileDragCarousel() {
+    mobileWidth() {
       return this.windowWidth < 700;
     },
   },

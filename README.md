@@ -1,4 +1,4 @@
-Hello, this is Neelam Khan's attempt at the BPS Coding Challenge!
+Hello, this is Neelam Khan's attempt at the BPS Coding Challenge.
 
 After learning TailwindCSS, VueJS, and NuxtJS, I am happy to say I have completed my first mini project using Tailwind and Vue and hope it meets your standards for a junior developer.
 

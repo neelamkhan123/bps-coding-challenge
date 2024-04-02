@@ -72,23 +72,22 @@
         class="flex flex-col smdt:flex-row justify-center items-center w-96"
       >
         <div
-          class="flex justify-center smdt:flex-col items-center smdt:items-start w-full ml-5"
+          class="flex justify-center smdt:flex-col items-center smdt:items-end dt:items-end w-full ml-5"
         >
           <!-- The Description -->
-          <div class="block smdt:hidden dt:block">
-            <div class="w-60 hidden dt:block">
-              <h1 class="mb-5 text-xl font-semibold">
-                {{ product.fullDescription }}
-              </h1>
-            </div>
-            <!-- Photo Thumbnails -->
-            <ThumbnailGrid
-              @setThumbnail="setActiveThumbnail"
-              :showVideoThumbnail="false"
-              :showThumbnails="true"
-              :arrowListener="activeThumbnail"
-            />
+          <div class="w-60 hidden dt:block">
+            <h1 class="mb-5 text-xl font-semibold">
+              {{ product.fullDescription }}
+            </h1>
           </div>
+          <!-- Photo Thumbnails -->
+          <ThumbnailGrid
+            @setThumbnail="setActiveThumbnail"
+            :showVideoThumbnail="false"
+            :showThumbnails="true"
+            :arrowListener="activeThumbnail"
+            :verticalIsTrue="limitToSmallerDesktop ? true : false"
+          />
         </div>
       </section>
 
@@ -142,12 +141,12 @@ export default {
       return this.activeTab === "videos";
     },
 
-    mobileDragCarousel() {
-      return this.windowWidth < 700;
+    limitToSmallerDesktop() {
+      return this.windowWidth > 700 && this.windowWidth < 1230;
     },
 
-    desktopThumbnailCarousel() {
-      return this.windowWidth > 700;
+    limitThumbnails() {
+      return this.windowWidth < 700 && this.windowWidth > 800;
     },
   },
   methods: {

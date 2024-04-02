@@ -19,6 +19,7 @@
         @setThumbnail="setActiveThumbnail"
         :arrowListener="thumbnail"
         :showVideoThumbnail="true"
+        :verticalIsTrue="false"
       />
     </div>
 
@@ -43,7 +44,7 @@
         }"
       ></div>
       <div
-        v-if="!mobileDragCarousel"
+        v-if="!mobileWidth"
         class="flex justify-center items-center text-xs text-slate-400"
         :class="{
           activeVideoPaginationClass: thumbnail === 4,
@@ -73,7 +74,7 @@ export default {
     };
   },
   computed: {
-    mobileDragCarousel() {
+    mobileWidth() {
       return this.windowWidth < 700;
     },
   },
